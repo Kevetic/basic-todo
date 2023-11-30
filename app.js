@@ -16,13 +16,13 @@ function onClick() {
 }
 
 window.onload = () => {
-  if (localStorage.length > 0) {
+  if (localStorage.PastItems) {
     let localSList = JSON.parse(localStorage.getItem("PastItems"));
-    console.log(localSList);
+    todoList = todoList.concat(localSList);
     for (let i = 0; i < localSList.length; i++) {
-      let reloadItem = document.createElement("li");
-      reloadItem.innerHTML = localSList[i];
-      todoItem.append(reloadItem);
+      let savedItems = document.createElement("li");
+      savedItems.innerHTML = localSList[i];
+      todoItem.append(savedItems);
     }
   }
 };
